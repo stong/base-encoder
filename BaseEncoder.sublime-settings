@@ -1,0 +1,25 @@
+{
+    // Whether or not the selection(s) should be replaced entirely by their
+    // encoded/decoded versions, or have the encoded/decoded versions placed
+    // in the same line as the original selections.
+    //
+    // Example for true:
+    //     "test" will be replaced by "dGVzdA=="
+    //
+    // Example for false:
+    //     "test" will be replaced by "test --> dGVzdA=="
+    //
+    "encoder_replace_in_place": true,
+
+    // What string of characters is used to denote the result of an
+    // encoding or decoding operation, if encoder_replace_in_place is false.
+    //
+    // Examples for "-->":
+    //     test --> dGVzdA==
+    //     aGVsbG8= --> hello
+    //
+    // Examples for "becomes":
+    //     test becomes dGVzdA==
+    //     aGVsbG8= becomes hello
+    "encoder_replace_symbol": "-->"
+}
