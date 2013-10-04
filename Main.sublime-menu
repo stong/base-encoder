@@ -1,0 +1,41 @@
+[
+{
+    "id": "selection",
+    "children":
+    [
+    {
+        "caption": "-"
+    },
+    {
+        "caption": "Base Encoding",
+        "children":
+        [
+        {
+            "caption": "Base64 Encode Selection(s)",
+            "command": "base64_encode"
+        },
+        {
+            "caption": "Base64 Decode Selection(s)",
+            "command": "base64_decode"
+        },
+        {
+            "caption": "Base32 Encode Selection(s)",
+            "command": "base32_encode"
+        },
+        {
+            "caption": "Base32 Decode Selection(s)",
+            "command": "base32_decode"
+        },
+        {
+            "caption": "Base16 Encode Selection(s)",
+            "command": "base16_encode"
+        },
+        {
+            "caption": "Base16 Decode Selection(s)",
+            "command": "base16_decode"
+        }
+        ]
+    }
+    ]
+}
+]

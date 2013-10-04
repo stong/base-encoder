@@ -1,0 +1,20 @@
+{
+    "schema_version": "1.2",
+    "packages": [
+        {
+            "name": "Base Encoder",
+            "description": "A simple tool for encoding and decoding selection(s) to/from base64, base32, and base16.",
+            "author": "Mark W. Evans (euphwes)",
+            "homepage": "https://github.com/euphwes/[repo name here]",
+            "last_modified": "2013-10-03 16:21:00",
+            "platforms": {
+                "*": [
+                    {
+                        "version": "1.0.0",
+                        "url": ["what goes here?"]
+                    }
+                ]
+            }
+        }
+    ]
+}
