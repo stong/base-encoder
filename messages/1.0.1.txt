@@ -1,0 +1,8 @@
+Base Encoder 1.0.1 Changelog:
+
+    - Initial functional release
+    - Provides ability to encode/decode single or multiple selections to/from Base64, Base32, and Base16
+        - Keyboard shortcuts available
+        - Command palette shortcuts available
+        - Commands also available in Selection sub-menu in main menu
+        - Undo available with Ctrl + Z
