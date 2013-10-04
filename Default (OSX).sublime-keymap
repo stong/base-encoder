@@ -1,2 +1,20 @@
 [
+    {
+        "keys": ["super+6", "super+4"], "command": "base64_encode"
+    },
+    {
+        "keys": ["super+alt+6", "super+alt+4"], "command": "base64_decode"
+    },
+    {
+        "keys": ["super+3", "super+2"], "command": "base32_encode"
+    },
+    {
+        "keys": ["super+alt+3", "super+alt+2"], "command": "base32_decode"
+    },
+    {
+        "keys": ["super+1", "super+6"], "command": "base16_encode"
+    },
+    {
+        "keys": ["super+alt+1", "super+alt+6"], "command": "base16_decode"
+    }
 ]
