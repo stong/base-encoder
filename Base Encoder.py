@@ -69,18 +69,26 @@ class CleanStatusThread(threading.Thread):
 def performConversion(convertFunc, command, edit):
 
     UTF_8 = 'UTF-8'
-
     success_count = 0
     failure_count = 0
+
+    base_encoder_settings = sublime.load_settings("BaseEncoder.sublime-settings")
+    replace_selection = base_encoder_settings.get("encoder_replace_selection", True)
+
+    replace_symbol = base_encoder_settings.get("encoder_replace_symbol", "-->")
+    replace_symbol = " " + replace_symbol + " "
 
     for selection in command.view.sel():
 
         try:
             selected_text = command.view.substr(selection)
 
-            if (len(selected_text) > 0):
+            if len(selected_text) > 0:
                 selected_bytes = bytes(selected_text, UTF_8)
                 converted_output = str(convertFunc(selected_bytes), UTF_8)
+
+                if not replace_selection:
+                    converted_output = selected_text + replace_symbol + converted_output
 
                 command.view.replace(edit, selection, converted_output)
                 success_count += 1

@@ -9,10 +9,10 @@
     // Example for false:
     //     "test" will be replaced by "test --> dGVzdA=="
     //
-    "encoder_replace_in_place": true,
+    "encoder_replace_selection": true,
 
     // What string of characters is used to denote the result of an
-    // encoding or decoding operation, if encoder_replace_in_place is false.
+    // encoding or decoding operation, if encoder_replace_selection is false.
     //
     // Examples for "-->":
     //     test --> dGVzdA==
