@@ -103,7 +103,8 @@ def performConversion(convertFunc, command, edit):
         command.view.sel().clear()
 
         for text in added_text:
-            region = command.view.find(text, 0)
+            regions = command.view.find_all(text)
+            region = regions[-1]
             command.view.sel().add(region)
 
     updateStatus(convertFunc, success_count, failure_count, command.view)
