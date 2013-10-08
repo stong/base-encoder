@@ -54,37 +54,45 @@
                         "children":
                         [
                             {
+                                "caption": "Settings – Default",
                                 "command": "open_file",
-                                "args": {
-                                    "file": "${packages}/Base Encoder/BaseEncoder.sublime-settings"
-                                },
-                                "caption": "Settings – Default"
+                                "args": { "file": "${packages}/Base Encoder/BaseEncoder.sublime-settings" }
                             },
                             {
+                                "caption": "Settings – User",
                                 "command": "open_file",
-                                "args": {
+                                "args": { "file": "${packages}/User/BaseEncoder.sublime-settings" }
+                            },
+                            {
+                                "caption": "-"
+                            },
+                            {
+                                "caption": "Key Bindings – Default",
+                                "command": "open_file",
+                                "args":
+                                {
                                     "file": "${packages}/Base Encoder/Default (Linux).sublime-keymap",
                                     "platform": "Linux"
-                                },
-                                "caption": "Key Bindings – Default"
+                                }
                             },
                             {
+                                "caption": "Key Bindings – Default",
                                 "command": "open_file",
-                                "args": {
+                                "args":
+                                {
                                     "file": "${packages}/Base Encoder/Default (Windows).sublime-keymap",
                                     "platform": "Windows"
-                                },
-                                "caption": "Key Bindings – Default"
+                                }
                             },
                             {
+                                "caption": "Key Bindings – Default",
                                 "command": "open_file",
-                                "args": {
+                                "args":
+                                {
                                     "file": "${packages}/Base Encoder/Default (OSX).sublime-keymap",
                                     "platform": "OSX"
-                                },
-                                "caption": "Key Bindings – Default"
-                            },
-                            { "caption": "-" }
+                                }
+                            }
                         ]
                     }
                 ]
