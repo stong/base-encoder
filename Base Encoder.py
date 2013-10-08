@@ -1,9 +1,9 @@
 from time import sleep
 import base64
+import re
 import sublime
 import sublime_plugin
 import threading
-
 
 class Base64EncodeCommand(sublime_plugin.TextCommand):
 
@@ -78,6 +78,8 @@ def performConversion(convertFunc, command, edit):
     replace_symbol = base_encoder_settings.get("encoder_replace_symbol", "-->")
     replace_symbol = " " + replace_symbol + " "
 
+    added_text = []
+
     for selection in command.view.sel():
 
         try:
@@ -88,6 +90,7 @@ def performConversion(convertFunc, command, edit):
                 converted_output = str(convertFunc(selected_bytes), UTF_8)
 
                 if not replace_selection:
+                    added_text.append(re.escape(converted_output))
                     converted_output = selected_text + replace_symbol + converted_output
 
                 command.view.replace(edit, selection, converted_output)
@@ -95,6 +98,13 @@ def performConversion(convertFunc, command, edit):
 
         except:
             failure_count += 1
+
+    if not replace_selection:
+        command.view.sel().clear()
+
+        for text in added_text:
+            region = command.view.find(text, 0)
+            command.view.sel().add(region)
 
     updateStatus(convertFunc, success_count, failure_count, command.view)
 

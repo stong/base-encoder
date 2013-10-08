@@ -1,41 +1,94 @@
 [
-{
-    "id": "selection",
-    "children":
-    [
     {
-        "caption": "-"
-    },
-    {
-        "caption": "Base Encoding",
+        "id": "selection",
         "children":
         [
-        {
-            "caption": "Base64 Encode Selection(s)",
-            "command": "base64_encode"
-        },
-        {
-            "caption": "Base64 Decode Selection(s)",
-            "command": "base64_decode"
-        },
-        {
-            "caption": "Base32 Encode Selection(s)",
-            "command": "base32_encode"
-        },
-        {
-            "caption": "Base32 Decode Selection(s)",
-            "command": "base32_decode"
-        },
-        {
-            "caption": "Base16 Encode Selection(s)",
-            "command": "base16_encode"
-        },
-        {
-            "caption": "Base16 Decode Selection(s)",
-            "command": "base16_decode"
-        }
+            {
+                "caption": "-"
+            },
+            {
+                "caption": "Base Encoder",
+                "children":
+                [
+                {
+                    "caption": "Base64 Encode Selection(s)",
+                    "command": "base64_encode"
+                },
+                {
+                    "caption": "Base64 Decode Selection(s)",
+                    "command": "base64_decode"
+                },
+                {
+                    "caption": "Base32 Encode Selection(s)",
+                    "command": "base32_encode"
+                },
+                {
+                    "caption": "Base32 Decode Selection(s)",
+                    "command": "base32_decode"
+                },
+                {
+                    "caption": "Base16 Encode Selection(s)",
+                    "command": "base16_encode"
+                },
+                {
+                    "caption": "Base16 Decode Selection(s)",
+                    "command": "base16_decode"
+                }
+                ]
+            }
+        ]
+    },
+    {
+        "caption": "Preferences",
+        "id": "preferences",
+        "children":
+        [
+            {
+                "caption": "Package Settings",
+                "mnemonic": "P",
+                "id": "package-settings",
+                "children":
+                [
+                    {
+                        "caption": "Base Encoder",
+                        "children":
+                        [
+                            {
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/Base Encoder/BaseEncoder.sublime-settings"
+                                },
+                                "caption": "Settings – Default"
+                            },
+                            {
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/Base Encoder/Default (Linux).sublime-keymap",
+                                    "platform": "Linux"
+                                },
+                                "caption": "Key Bindings – Default"
+                            },
+                            {
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/Base Encoder/Default (Windows).sublime-keymap",
+                                    "platform": "Windows"
+                                },
+                                "caption": "Key Bindings – Default"
+                            },
+                            {
+                                "command": "open_file",
+                                "args": {
+                                    "file": "${packages}/Base Encoder/Default (OSX).sublime-keymap",
+                                    "platform": "OSX"
+                                },
+                                "caption": "Key Bindings – Default"
+                            },
+                            { "caption": "-" }
+                        ]
+                    }
+                ]
+            }
         ]
     }
-    ]
-}
 ]

@@ -1,0 +1,7 @@
+Base Encoder 1.1.0 Changelog:
+
+    - New Base Encoder settings:
+        - Added ability to choose between replacing selection entirely, or appending the converted output to the end of the original selection
+        - If appending output, the user can choose a string or symbol to demarcate the conversion. Defaults to "-->"
+
+    - New menu item under preferences to access Base Encoder settings and key bindings
