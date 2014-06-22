@@ -16,7 +16,7 @@ class Base64DecodeCommand(sublime_plugin.TextCommand):
 
     def run(self, edit):
 
-        performConversion(base64.b64decode, self, edit)
+        performConversion(safeBase64Decode, self, edit)
 
 
 class Base32EncodeCommand(sublime_plugin.TextCommand):
@@ -113,7 +113,7 @@ def performConversion(convertFunc, command, edit):
 def getTaskDescription(convertFunc):
 
     taskDescriptions = dict(zip(
-        [base64.b64encode, base64.b64decode, base64.b32encode,
+        [base64.b64encode, safeBase64Decode, base64.b32encode,
             base64.b32decode, base64.b16encode, base64.b16decode],
         ["Base-64 encoding", "Base-64 decoding", "Base-32 encoding",
             "Base-32 decoding", "Base-16 encoding", "Base-16 decoding"]))
@@ -140,3 +140,15 @@ def updateStatus(convertFunc, success_count, failure_count, view):
 
     clean_status = CleanStatusThread(10, view)
     clean_status.start()
+
+def safeBase64Decode(text):
+
+    pad = text
+    mod = len(text) % 4
+
+    if mod == 3:
+        pad = text + "="
+    elif mod == 2:
+        pad = tex + "=="
+
+    return base64.b64decode(pad)
