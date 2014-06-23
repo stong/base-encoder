@@ -141,14 +141,14 @@ def updateStatus(convertFunc, success_count, failure_count, view):
     clean_status = CleanStatusThread(10, view)
     clean_status.start()
 
-def safeBase64Decode(text):
+def safeBase64Decode(encoded_bytes):
 
-    pad = text
-    mod = len(text) % 4
+    padded = bytearray(encoded_bytes)
+    mod = len(encoded_bytes) % 4
 
     if mod == 3:
-        pad = text + "="
+        padded.extend(bytes("=", "UTF-8"))
     elif mod == 2:
-        pad = tex + "=="
+        padded.extend(bytes("==", "UTF-8"))
 
-    return base64.b64decode(pad)
+    return base64.b64decode(padded)
