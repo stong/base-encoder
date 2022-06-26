@@ -116,7 +116,7 @@ def getTaskDescription(convertFunc):
         [base64.b64encode, safeBase64Decode, base64.b32encode,
             base64.b32decode, base64.b16encode, base64.b16decode],
         ["Base-64 encoding", "Base-64 decoding", "Base-32 encoding",
-            "Base-32 decoding", "Base-16 encoding", "Base-16 decoding"]))
+            "Base-32 decoding", "Hex encoding", "Hex decoding"]))
 
     return taskDescriptions[convertFunc]
 
